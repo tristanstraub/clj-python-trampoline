@@ -1,11 +1,12 @@
-(ns clj-python-trampoline.bootstrap
+(ns clj-python-trampoline.python-nrepl
   (:require [clojure.string :as str]
             [nrepl.cmdline]
             [clj-python-trampoline.interpreter] ;; patch libpython-clj.python.interpreter/initialize! to work with already loaded python library
-            ))
+            )
+  (:gen-class))
 
 (defn -main
-  []
+  [& _]
   (future
     (try
       ;; Find python executable and library, and initialize. clj-python-trampoline.interpreter

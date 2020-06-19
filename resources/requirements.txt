@@ -1,0 +1,1 @@
+javabridge >= 1.0.19

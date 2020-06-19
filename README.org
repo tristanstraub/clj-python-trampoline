@@ -1,29 +1,13 @@
-* Building
+* Motivation
 
-#+BEGIN_SRC sh
-./build.sh
-#+END_SRC
+I want to use libpython-clj from an already running python process, without needing any special python builds.
 
 * Examples
 
-** Blender
+[[examples/blender]]
 
-Run blender, and start embedded nrepl:
+* Implementation
 
-#+BEGIN_SRC sh
-blender -P trampoline.py
-#+END_SRC
-
-Connect remotely with nrepl:
-
-#+BEGIN_SRC sh
-clj -m nrepl.cmdline -c -p $(cat .nrepl-port)
-#+END_SRC
-
-Start scripting:
-
-#+BEGIN_SRC clj
-(ns user)
-(require '[libpython-clj.python :refer [py..] :as py])
-(print (py.. (py/import-module "bpy") -context))
-#+END_SRC
+*javabridge* provides the python -> jvm connection.
+*libpython-clj* is patched at runtime, to be able to use it from inside an existing python process. This is
+experimental and will certainly break something.

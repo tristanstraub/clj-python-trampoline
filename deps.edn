@@ -1,9 +1,5 @@
-{:paths   ["src/clojure" "classes" "resources"]
+{:paths   ["src" "resources"]
 
  :deps    {org.clojure/clojure      {:mvn/version "1.10.1"}
            clj-python/libpython-clj {:mvn/version "1.44"}
-           nrepl/nrepl              {:mvn/version "0.7.0"}}
-
- :aliases {:uberjar {:extra-paths ["classes"]
-                     :extra-deps  {uberdeps {:mvn/version "0.1.4"}}
-                     :main-opts   ["-m" "uberdeps.uberjar" "--target" "target/clj_python_trampoline.jar" "--aliases" "uberjar" "--main-class" "clj-python-trampoline.bootstrap"]}}}
+           nrepl/nrepl              {:mvn/version "0.7.0"}}}

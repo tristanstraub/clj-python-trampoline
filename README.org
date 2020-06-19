@@ -1,0 +1,29 @@
+* Building
+
+#+BEGIN_SRC sh
+./build.sh
+#+END_SRC
+
+* Examples
+
+** Blender
+
+Run blender, and start embedded nrepl:
+
+#+BEGIN_SRC sh
+blender -P trampoline.py
+#+END_SRC
+
+Connect remotely with nrepl:
+
+#+BEGIN_SRC sh
+clj -m nrepl.cmdline -c -p $(cat .nrepl-port)
+#+END_SRC
+
+Start scripting:
+
+#+BEGIN_SRC clj
+(ns user)
+(require '[libpython-clj.python :refer [py..] :as py])
+(print (py.. (py/import-module "bpy") -context))
+#+END_SRC

@@ -4,7 +4,7 @@ I want to use libpython-clj from an already running python process, without need
 
 * Examples
 
-[[examples/blender]]
+- [[examples/blender]]
 
 * Implementation
 

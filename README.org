@@ -8,5 +8,5 @@ I want to use libpython-clj from an already running python process, without need
 
 * Implementation
 
-*javabridge* provides the python -> jvm connection.
-*libpython-clj* is patched at runtime, to be able to use it from inside an existing python process. This patch is experimental and will certainly break something.
+- *javabridge* provides the python -> jvm connection.
+- *libpython-clj* is patched at runtime, to be able to use it from inside an existing python process. This patch is experimental and will certainly break something.

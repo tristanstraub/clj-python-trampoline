@@ -19,7 +19,7 @@ clj -m clj-python-trampoline.resources --template | bash
 Connect nREPL:
 
 #+BEGIN_SRC sh
-clj -m nrepl.cmdline -r -c -p $PORT
+clj -m nrepl.cmdline -c -p $(cat .nrepl-port)
 #+END_SRC
 
 And, run the examples:

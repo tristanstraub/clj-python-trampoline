@@ -1,7 +1,6 @@
 import os, javabridge, subprocess
 
-print("cmd:" + "clj -Spath " + os.environ["CLJ_ARGS"])
-classpath=str(subprocess.check_output("clj -Spath " + os.environ["CLJ_ARGS"], shell=True))
+classpath=subprocess.check_output("clj " + os.environ["CLJ_ARGS"] + " -Spath ", shell=True).decode('utf-8')
 print("classpath:", classpath)
 
 jars = javabridge.JARS + [classpath]

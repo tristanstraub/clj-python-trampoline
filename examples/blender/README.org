@@ -2,7 +2,7 @@
 
 Script blender with clojure, without any special blender build.
 
-* Running
+* Running (with special arguments for emacs/cider)
 
 #+BEGIN_SRC sh
 export PYTHON_COMMAND="blender -P"

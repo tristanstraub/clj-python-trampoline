@@ -7,7 +7,7 @@ Script blender with clojure, without any special blender build.
 #+BEGIN_SRC sh
 export PYTHON_COMMAND="blender -P"
 # Optional
-export CLJ_ARGS="-Sdeps '{:deps {nrepl {:mvn/version \"0.7.0\"} refactor-nrepl {:mvn/version \"2.5.0\"} cider/cider-nrepl {:mvn/version \"0.25.0-alpha1\"}}}'"
+export CLJ_ARGS="-Sdeps '{:deps {nrepl {:mvn/version \"0.7.0\"} refactor-nrepl {:mvn/version \"RELEASE\"} cider/cider-nrepl {:mvn/version \"RELEASE\"}}}'"
 # Optional
 export NREPL_CMDLINE_ARGS="--middleware [\"refactor-nrepl.middleware/wrap-refactor\",\"cider.nrepl/cider-middleware\"]"
 

@@ -6,6 +6,12 @@ I want to use libpython-clj from an already running python process, without need
 
 - [[examples/blender]]
 
+* Assumptions
+
+*javabridge* is installed with your local "pip3" command, which should be installing to the python environment that blender uses.
+
+(Tested on Fedora 31)
+
 * Implementation
 
 - *javabridge* provides the python -> jvm connection.

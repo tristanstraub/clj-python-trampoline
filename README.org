@@ -24,7 +24,6 @@ The following prepares and runs the python process (or application with embedded
    i. from the command line:
 
    #+BEGIN_SRC sh
-   # export CLASSPATH="$(clj -Spath)" # optional override
    python3 clj.py
    #+END_SRC
 

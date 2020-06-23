@@ -8,6 +8,8 @@ I want to use libpython-clj from an already running python process, without need
 
 * Running python with embedded nREPL
 
+The following starts the python process (or application with embedded python) and bootstraps nREPL via a python script, passed via the command line.
+
 #+BEGIN_SRC sh
 clj -m clj-python-trampoline.resources --template | bash
 #+END_SRC

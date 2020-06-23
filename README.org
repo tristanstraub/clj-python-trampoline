@@ -8,21 +8,28 @@ I want to use libpython-clj from an already running python process, without need
 
 * Running python with embedded nREPL
 
-The following starts the python process (or application with embedded python) and bootstraps nREPL via a python script, passed via the command line.
+The following prepares and runs the python process (or application with embedded python) and bootstraps nREPL via a python script, passed via the command line.
+
+- Preparing python environment:
 
 #+BEGIN_SRC sh
-clj -m clj-python-trampoline.resources --template | bash
+mkdir -p .trampoline
+clj -m clj-python-trampoline.resources --nrepl > .trampoline/nrepl.py
+clj -m clj-python-trampoline.resources --requirements > .trampoline/requirements.txt
+pip3 install -r .trampoline/requirements.txt
 #+END_SRC
 
-The following environment variables can be overriden:
+- Bootstrapping nREPL from python environment
 
-- *PYTHON_COMMAND*
+#+BEGIN_SRC sh
+# Overrides
+export CLJ_ARGS=...
+export NREPL_CMDLINE_ARGS=...
 
-  The expansion of this variable should be a command that can execute the "trampoline.py" script.
+python3 .trampoline/nrepl.py # or blender -P .trampoline/nrepl.py
+#+END_SRC
 
-  #+BEGIN_SRC sh
-  export PYTHON_COMMAND="blender -P" # default: python3
-  #+END_SRC
+Environment variable overrides for nrepl.py:
 
 - *CLJ_ARGS*
 
@@ -40,22 +47,6 @@ The following environment variables can be overriden:
   #+BEGIN_SRC sh
   export NREPL_CMDLINE_ARGS="--middleware [\"refactor-nrepl.middleware/wrap-refactor\", \
       \"cider.nrepl/cider-middleware\"]"
-  #+END_SRC
-
-- *PYTHON_PIP_COMMAND*
-
-  Overries the "pip" command for installing *javabridge*.
-
-  #+BEGIN_SRC sh
-  export PYTHON_PIP_COMMAND="pip" # default: pip3
-  #+END_SRC
-
-- *PYTHON_PIP_ARGS*
-
-  Extra arguments for pip.
-
-  #+BEGIN_SRC sh
-  export PYTHON_PIP_ARGS="--user"
   #+END_SRC
 
 * Assumptions

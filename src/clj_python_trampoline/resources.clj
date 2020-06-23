@@ -1,24 +1,18 @@
 (ns clj-python-trampoline.resources
   (:require [clojure.java.io :as io]))
 
-(defn script
+(defn nrepl
   []
-  (print (slurp (io/resource "trampoline.py"))))
+  (print (slurp (io/resource "nrepl.py"))))
 
 (defn requirements
   []
   (print (slurp (io/resource "requirements.txt"))))
 
-(defn template
-  []
-  (print (slurp (io/resource "template.sh"))))
-
 (defn -main
   [& args]
   (doseq [arg args]
-    (cond (= arg "--script")
-          (script)
+    (cond (= arg "--nrepl")
+          (nrepl)
           (= arg "--requirements")
-          (requirements)
-          (= arg "--template")
-          (template))))
+          (requirements))))

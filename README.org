@@ -24,6 +24,7 @@ The following prepares and runs the python process (or application with embedded
    i. from the command line:
 
    #+BEGIN_SRC sh
+   # export CLASSPATH="$(clj -Spath)" # optional override
    python3 clj.py
    #+END_SRC
 
@@ -48,11 +49,9 @@ The following prepares and runs the python process (or application with embedded
    #+END_SRC
 
    #+BEGIN_SRC clojure
-   (require 'clj-python-trampoline.interpreter) ;; patch libpython-clj for embedding
-   (require 'libpython-clj.require) ;; loads python shared library for us, calling our patched libpython-clj
-
-   (require '[libpython-clj.python :refer [py..] :as py])
-   (print (py.. (py/import-module "sys") -version))
+   (require '[libpython-clj.require :refer [require-python]]) ;; loads python shared library for us, calling our patched libpython-clj
+   (require-python 'sys)
+   (println sys/version)
    #+END_SRC
 
 * Assumptions

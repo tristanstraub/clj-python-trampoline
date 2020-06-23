@@ -20,14 +20,8 @@ The following environment variables can be overriden:
 
   The expansion of this variable should be a command that can execute the "trampoline.py" script.
 
-  Default:
   #+BEGIN_SRC sh
-  python3
-  #+END_SRC
-
-  Example:
-  #+BEGIN_SRC sh
-  blender -P
+  export PYTHON_COMMAND="blender -P" # default: python3
   #+END_SRC
 
 - *CLJ_ARGS*

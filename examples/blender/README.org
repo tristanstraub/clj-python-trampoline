@@ -4,7 +4,7 @@ Script blender with clojure, without any special blender build.
 
 * Running (with special arguments for emacs/cider)
 
-- Prepare python:
+1. Prepare python:
 
 #+BEGIN_SRC sh
 mkdir -p .trampoline
@@ -13,7 +13,7 @@ clj -m clj-python-trampoline.resources --requirements > .trampoline/requirements
 pip3 install -r .trampoline/requirements.txt
 #+END_SRC
 
-- Bootstrap nREPL from blender
+2. Bootstrap nREPL from blender
 
 #+BEGIN_SRC sh
 blender -P .trampoline/nrepl.py

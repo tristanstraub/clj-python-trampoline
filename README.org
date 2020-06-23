@@ -10,7 +10,7 @@ I want to use libpython-clj from an already running python process, without need
 
 The following prepares and runs the python process (or application with embedded python) and bootstraps nREPL via a python script, passed via the command line.
 
-- Preparing python environment:
+1. Preparing python environment:
 
 #+BEGIN_SRC sh
 mkdir -p .trampoline
@@ -19,7 +19,7 @@ clj -m clj-python-trampoline.resources --requirements > .trampoline/requirements
 pip3 install -r .trampoline/requirements.txt
 #+END_SRC
 
-- Bootstrapping nREPL from python environment
+2. Bootstrapping nREPL from python environment
 
 #+BEGIN_SRC sh
 # Overrides

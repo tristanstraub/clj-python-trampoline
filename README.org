@@ -2,10 +2,6 @@
 
 I want to use libpython-clj from an already running python process, without needing any special python builds.
 
-* Examples
-
-- [[examples/blender]]
-
 * Running python with embedded nREPL
 
 The following prepares and runs the python process (or application with embedded python) and bootstraps nREPL via a python script, passed via the command line.
@@ -33,7 +29,7 @@ The following prepares and runs the python process (or application with embedded
    python3 clj.py -- -e "(require 'nrepl.cmdline) (future (nrepl.cmdline/-main))"
    #+END_SRC
 
-   iii. from blender, with nREPL and cider middleware:
+   iii. from *blender*, with nREPL and cider middleware:
 
    #+BEGIN_SRC sh
    export CLASSPATH="$(clj -Sdeps '{:deps {nrepl {:mvn/version "0.7.0"} refactor-nrepl {:mvn/version "RELEASE"} cider/cider-nrepl {:mvn/version "RELEASE"}}}' -Spath)"

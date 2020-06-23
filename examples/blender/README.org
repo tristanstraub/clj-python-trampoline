@@ -6,18 +6,18 @@ Script blender with clojure, without any special blender build.
 
 1. Prepare python:
 
-#+BEGIN_SRC sh
-mkdir -p .trampoline
-clj -m clj-python-trampoline.resources --nrepl > .trampoline/nrepl.py
-clj -m clj-python-trampoline.resources --requirements > .trampoline/requirements.txt
-pip3 install -r .trampoline/requirements.txt
-#+END_SRC
+   #+BEGIN_SRC sh
+   mkdir -p .trampoline
+   clj -m clj-python-trampoline.resources --nrepl > .trampoline/nrepl.py
+   clj -m clj-python-trampoline.resources --requirements > .trampoline/requirements.txt
+   pip3 install -r .trampoline/requirements.txt
+   #+END_SRC
 
 2. Bootstrap nREPL from blender
 
-#+BEGIN_SRC sh
-blender -P .trampoline/nrepl.py
-#+END_SRC
+   #+BEGIN_SRC sh
+   blender -P .trampoline/nrepl.py
+   #+END_SRC
 
 * Example
 

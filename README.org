@@ -12,22 +12,22 @@ The following prepares and runs the python process (or application with embedded
 
 1. Preparing python environment:
 
-#+BEGIN_SRC sh
-mkdir -p .trampoline
-clj -m clj-python-trampoline.resources --nrepl > .trampoline/nrepl.py
-clj -m clj-python-trampoline.resources --requirements > .trampoline/requirements.txt
-pip3 install -r .trampoline/requirements.txt
-#+END_SRC
+   #+BEGIN_SRC sh
+   mkdir -p .trampoline
+   clj -m clj-python-trampoline.resources --nrepl > .trampoline/nrepl.py
+   clj -m clj-python-trampoline.resources --requirements > .trampoline/requirements.txt
+   pip3 install -r .trampoline/requirements.txt
+   #+END_SRC
 
 2. Bootstrapping nREPL from python environment
 
-#+BEGIN_SRC sh
-# Overrides
-export CLJ_ARGS=...
-export NREPL_CMDLINE_ARGS=...
+   #+BEGIN_SRC sh
+   # Overrides
+   export CLJ_ARGS=...
+   export NREPL_CMDLINE_ARGS=...
 
-python3 .trampoline/nrepl.py # or blender -P .trampoline/nrepl.py
-#+END_SRC
+   python3 .trampoline/nrepl.py # or blender -P .trampoline/nrepl.py
+   #+END_SRC
 
 Environment variable overrides for nrepl.py:
 

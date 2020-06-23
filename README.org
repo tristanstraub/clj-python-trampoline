@@ -28,25 +28,33 @@ The following environment variables can be overriden:
 
   Used to call "clj" to gather the classpath for starting the embedded jvm.
 
-  example: "-Sdeps '{:deps {nrepl {:mvn/version \"0.7.0\"} refactor-nrepl {:mvn/version \"RELEASE\"} cider/cider-nrepl {:mvn/version \"RELEASE\"}}}'"
+  #+BEGIN_SRC sh
+  export CLJ_ARGS="-Sdeps '{:deps {nrepl {:mvn/version \"0.7.0\"} refactor-nrepl {:mvn/version \"RELEASE\"} cider/cider-nrepl {:mvn/version \"RELEASE\"}}}'"
+  #+END_SRC
 
 - *NREPL_CMDLINE_ARGS*
 
-  Passed to "nrepl.cmdline"
+  Passed to "nrepl.cmdline".
 
-  example: "--middleware [\"refactor-nrepl.middleware/wrap-refactor\",\"cider.nrepl/cider-middleware\"]"
+  #+BEGIN_SRC sh
+  export NREPL_CMDLINE_ARGS="--middleware [\"refactor-nrepl.middleware/wrap-refactor\",\"cider.nrepl/cider-middleware\"]"
+  #+END_SRC
 
 - *PYTHON_PIP_COMMAND*
 
   Overries the "pip" command for installing *javabridge*.
 
-  default: "pip3"
+  #+BEGIN_SRC sh
+  export PYTHON_PIP_COMMAND="pip" # default: pip3
+  #+END_SRC
 
 - *PYTHON_PIP_ARGS*
 
-  Extra arguments for pip
+  Extra arguments for pip.
 
-  example: "--user"
+  #+BEGIN_SRC sh
+  export PYTHON_PIP_ARGS="--user"
+  #+END_SRC
 
 * Assumptions
 

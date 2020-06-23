@@ -32,6 +32,10 @@ The following environment variables can be overriden:
 
   Overries the "pip" command for installing *javabridge*.
 
+- *PYTHON_PIP_ARGS* (example: "--user")
+
+  Extra arguments for pip
+
 * Assumptions
 
 *javabridge* is installed with your local "pip3" command, which should be installing to the python environment that blender uses.

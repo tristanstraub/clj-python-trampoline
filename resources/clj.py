@@ -13,9 +13,13 @@ def main(*args):
 
     print('args:', args)
 
-    cljargs = env.make_object_array(len(args), stringclass)
+    cljargs = env.make_object_array(len(args) + 2, stringclass)
+
+    env.set_object_array_element(cljargs, 0, env.new_string_utf("-e"))
+    env.set_object_array_element(cljargs, 1, env.new_string_utf("(require 'clj-python-trampoline.interpreter)"))
+
     for i, arg in enumerate(args):
-        env.set_object_array_element(cljargs, i, env.new_string_utf(arg))
+        env.set_object_array_element(cljargs, i + 2, env.new_string_utf(arg))
 
     c = env.find_class("clojure/main")
     method_id = env.get_static_method_id(c, "main", "([Ljava/lang/String;)V")

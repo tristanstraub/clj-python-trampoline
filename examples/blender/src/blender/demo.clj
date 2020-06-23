@@ -1,5 +1,6 @@
 (ns blender.demo
-  (:require [libpython-clj.python :refer [py..] :as py]))
+  (:require [libpython-clj.require]
+            [libpython-clj.python :refer [py..] :as py]))
 
 (defn get-defaults
   []

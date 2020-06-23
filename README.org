@@ -41,7 +41,11 @@ The following prepares and runs the python process (or application with embedded
    blender -P clj.py -- -e "(require 'nrepl.cmdline) (future (nrepl.cmdline/-main \"--middleware\" \"[\\\"refactor-nrepl.middleware/wrap-refactor\\\",\\\"cider.nrepl/cider-middleware\\\"]\"))"
    #+END_SRC
 
-3. Connect remote nREPL, and load python bindings:
+3. Connect to remote nREPL, and load python bindings:
+
+   #+BEGIN_SRC sh
+   clj -m nrepl.cmdline -c -p $(cat .nrepl-port)
+   #+END_SRC
 
    #+BEGIN_SRC clojure
    (require 'clj-python-trampoline.interpreter) ;; patch libpython-clj for embedding

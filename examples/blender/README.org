@@ -4,33 +4,34 @@ Script blender with clojure, without any special blender build.
 
 * Running (with special arguments for emacs/cider)
 
-1. Prepare python:
+Follow the instructions in https://github.com/tristanstraub/clj-python-trampoline to get your python environment setup, and a local copy of clj.py. Then,
+
+1. Prepare the python environment:
 
    #+BEGIN_SRC sh
-   mkdir -p .trampoline
-   clj -m clj-python-trampoline.resources --nrepl > .trampoline/nrepl.py
-   clj -m clj-python-trampoline.resources --requirements > .trampoline/requirements.txt
-   pip3 install -r .trampoline/requirements.txt
+   clj -m clj-python-trampoline.resources --requirements > requirements.txt
+   pip3 install -r requirements.txt
+
+   clj -m clj-python-trampoline.resources --clj > clj.py
    #+END_SRC
 
-2. Bootstrap nREPL from blender
+2. Open blender and start nREPL:
 
    #+BEGIN_SRC sh
-   blender -P .trampoline/nrepl.py
+   export CLASSPATH="$(clj -Spath)"
+   blender -P clj.py -- -e "(require 'nrepl.cmdline) (future (nrepl.cmdline/-main))"
    #+END_SRC
 
-* Example
+3. Connect with nREPL:
 
-Connect nREPL:
+   #+BEGIN_SRC sh
+   clj -m nrepl.cmdline -c -p $(cat .nrepl-port)
+   #+END_SRC
 
-#+BEGIN_SRC sh
-clj -m nrepl.cmdline -c -p $(cat .nrepl-port)
-#+END_SRC
+4. Run the demo:
 
-And, run the examples:
-
-#+BEGIN_SRC clojure
-(require 'blender.demo)
-(blender.demo/info)
-(blender.demo/cubes)
-#+END_SRC
+   #+BEGIN_SRC clojure
+   (require 'blender.demo)
+   (blender.demo/info)
+   (blender.demo/cubes)
+   #+END_SRC

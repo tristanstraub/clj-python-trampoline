@@ -45,8 +45,7 @@ Environment variable overrides for nrepl.py:
   Passed to "nrepl.cmdline".
 
   #+BEGIN_SRC sh
-  export NREPL_CMDLINE_ARGS="--middleware [\"refactor-nrepl.middleware/wrap-refactor\", \
-      \"cider.nrepl/cider-middleware\"]"
+  export NREPL_CMDLINE_ARGS="--middleware [\"refactor-nrepl.middleware/wrap-refactor\",\"cider.nrepl/cider-middleware\"]"
   #+END_SRC
 
 * Assumptions

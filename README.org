@@ -4,7 +4,7 @@ I want to use libpython-clj from an already running python process, without need
 
 * Examples
 
-  [[https://github.com/tristanstraub/blender-clj-addon]]
+  [[https://github.com/tristanstraub/blender-clj-addon][blender-clj-addon]]
 
 * Running python with embedded nREPL
 

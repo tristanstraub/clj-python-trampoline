@@ -2,6 +2,10 @@
 
 I want to use libpython-clj from an already running python process, without needing any special python builds.
 
+* Examples
+
+  [[https://github.com/tristanstraub/blender-clj-addon]]
+
 * Running python with embedded nREPL
 
 The following prepares and runs the python process (or application with embedded python) and bootstraps nREPL via a python script, passed via the command line.

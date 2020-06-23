@@ -1,18 +1,18 @@
 (ns clj-python-trampoline.resources
   (:require [clojure.java.io :as io]))
 
-(defn nrepl
+(defn resource-clj
   []
-  (print (slurp (io/resource "nrepl.py"))))
+  (print (slurp (io/resource "clj.py"))))
 
-(defn requirements
+(defn resource-requirements
   []
   (print (slurp (io/resource "requirements.txt"))))
 
 (defn -main
   [& args]
   (doseq [arg args]
-    (cond (= arg "--nrepl")
-          (nrepl)
+    (cond (= arg "--clj")
+          (resource-clj)
           (= arg "--requirements")
-          (requirements))))
+          (resource-requirements))))

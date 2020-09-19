@@ -4,7 +4,7 @@ def main(*args):
     jars = javabridge.JARS
     classpath=os.getenv("CLASSPATH", None)
     if not classpath:
-        classpath = subprocess.check_output("clj -Spath", shell=True).decode('utf-8')
+        classpath = subprocess.check_output("clj -Spath", shell=True).decode('utf-8').strip()
 
     if classpath:
         jars = jars + [classpath]
